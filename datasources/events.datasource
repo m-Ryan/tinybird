@@ -1,4 +1,6 @@
 
+SET allow_experimental_object_type = 1;
+
 SCHEMA >
     `cartId` String `json:$.cartId`,
     `cartToken` String `json:$.cartToken`,
