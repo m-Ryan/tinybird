@@ -1,0 +1,3 @@
+NODE count_events_0
+SQL >
+    SELECT count() FROM events
