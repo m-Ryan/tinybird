@@ -1,6 +1,3 @@
-
-SET allow_experimental_object_type = 1;
-
 SCHEMA >
     `cartId` String `json:$.cartId`,
     `cartToken` String `json:$.cartToken`,
@@ -8,7 +5,15 @@ SCHEMA >
     `ip` String `json:$.ip`,
     `language` String `json:$.language`,
     `location` String `json:$.location`,
-    `metadata` JSON `json:$.metadata`,
+    `metadata_eventData_event_id` String `json:$.metadata.eventData.event_id`,
+    `metadata_eventData_event_time` String `json:$.metadata.eventData.event_time`,
+    `metadata_eventData_items__currency` Array(String) `json:$.metadata.eventData.items[:].currency`,
+    `metadata_eventData_items__item_id` Array(String) `json:$.metadata.eventData.items[:].item_id`,
+    `metadata_eventData_items__item_name` Array(String) `json:$.metadata.eventData.items[:].item_name`,
+    `metadata_eventData_items__item_variant` Array(String) `json:$.metadata.eventData.items[:].item_variant`,
+    `metadata_eventData_items__price` Array(Float32) `json:$.metadata.eventData.items[:].price`,
+    `metadata_eventData_items__quantity` Array(Int16) `json:$.metadata.eventData.items[:].quantity`,
+    `metadata_eventData_value` Float32 `json:$.metadata.eventData.value`,
     `referrer` String `json:$.referrer`,
     `sessionId` String `json:$.sessionId`,
     `source` Array(String) `json:$.source[:]`,
@@ -17,7 +22,9 @@ SCHEMA >
     `userAgent` String `json:$.userAgent`,
     `workspaceId` String `json:$.workspaceId`,
     `campaign` Array(String) `json:$.campaign[:]`,
-    `medium` Array(String) `json:$.medium[:]`
+    `medium` Array(String) `json:$.medium[:]`,
+    `metadata_eventData_items__item_brand` Array(String) `json:$.metadata.eventData.items[:].item_brand`,
+    `metadata_eventData_search_query` Nullable(String) `json:$.metadata.eventData.search_query`
 
-ENGINE "MergeTree"
-ENGINE_SORTING_KEY "cartId, type, userAgent, workspaceId"
+ENGINE MergeTree
+ENGINE_SORTING_KEY cartId, type, userAgent, workspaceId
