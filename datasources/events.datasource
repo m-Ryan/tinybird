@@ -15,7 +15,7 @@ SCHEMA >
     `metadata_eventData_items__quantity` Array(Int16) `json:$.metadata.eventData.items[:].quantity`,
     `metadata_eventData_value` Float32 `json:$.metadata.eventData.value`,
     `referrer` String `json:$.referrer`,
-    `sessionId` String `json:$.sessionId`,
+    `sessionId` Nullable(String) `json:$.sessionId`,
     `source` Array(String) `json:$.source[:]`,
     `title` String `json:$.title`,
     `type` String `json:$.type`,
