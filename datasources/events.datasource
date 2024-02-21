@@ -15,7 +15,7 @@ SCHEMA >
     `userAgent` String `json:$.userAgent`,
     `workspaceId` String `json:$.workspaceId`,
     `campaign` Array(String) `json:$.campaign[:]`,
-    `medium` Array(String) `json:$.medium[:]`,
+    `medium` Array(String) `json:$.medium[:]`
 
 ENGINE "MergeTree"
 ENGINE_SORTING_KEY "cartId, type, userAgent, workspaceId"
