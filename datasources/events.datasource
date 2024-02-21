@@ -24,7 +24,7 @@ SCHEMA >
     `workspaceId` Nullable(String) `json:$.workspaceId`,
     `campaign` Nullable(Array(String)) `json:$.campaign[:]`,
     `medium` Nullable(Array(String)) `json:$.medium[:]`,
-    `metadata_eventData_items__item_brand` Array(Nullable(String)) `json:$.metadata.eventData.items[:].item_brand`,
+    `metadata_eventData_items__item_brand` Nullable(Array(String)) `json:$.metadata.eventData.items[:].item_brand`,
     `metadata_eventData_search_query` Nullable(String) `json:$.metadata.eventData.search_query`
 
 ENGINE "MergeTree"
