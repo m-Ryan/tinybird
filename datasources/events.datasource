@@ -25,4 +25,4 @@ SCHEMA >
     `medium` Array(String) `json:$.medium[:]`
 
 ENGINE MergeTree
-ENGINE_SORTING_KEY cartId, type, userAgent, workspaceId
+ENGINE_SORTING_KEY type, workspaceId
