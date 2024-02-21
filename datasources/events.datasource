@@ -17,7 +17,7 @@ SCHEMA >
     `metadata_eventData_value` Float32 `json:$.metadata.eventData.value`,
     `referrer` Nullable(String) `json:$.referrer`,
     `sessionId` Nullable(String) `json:$.sessionId`,
-    `source` Array(Nullable(String)) `json:$.source[:]`,
+    `source` Nullable(Array(String)) `json:$.source[:]`,
     `title` Nullable(String) `json:$.title`,
     `type` Nullable(String) `json:$.type`,
     `userAgent` Nullable(String) `json:$.userAgent`,
