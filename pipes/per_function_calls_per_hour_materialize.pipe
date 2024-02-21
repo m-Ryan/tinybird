@@ -1,6 +1,0 @@
-NODE mv
-SQL >
-    SELECT path(url) AS function_name, toStartOfHour(event_ts) AS hour, countState() AS total
-    FROM logs
-    GROUP BY hour, function_name
-    ORDER BY hour ASC
