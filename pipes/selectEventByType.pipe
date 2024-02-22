@@ -1,0 +1,6 @@
+TOKEN "selectEventByType_endpoint_read_1972" READ
+
+NODE untitled_pipe_6413_0
+SQL >
+    %
+    SELECT * FROM events where type ={{ String(type, '') }} limit 1000
