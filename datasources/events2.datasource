@@ -1,4 +1,3 @@
-
 SCHEMA >
     `cart_id` String `json:$.cart_id`,
     `client_id` String `json:$.client_id`,
@@ -57,6 +56,6 @@ SCHEMA >
     `timestamp` DateTime `json:$.timestamp`,
     `created_at` DateTime `json:$.timestamp`
 
-ENGINE "MergeTree"
-ENGINE_SORTING_KEY "created_at"
-
+ENGINE MergeTree
+ENGINE_PARTITION_KEY toYear(timestamp)
+ENGINE_SORTING_KEY created_at
