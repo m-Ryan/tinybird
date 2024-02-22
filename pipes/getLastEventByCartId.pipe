@@ -1,6 +1,0 @@
-TOKEN "getLastEventByCartId_endpoint_read_9593" READ
-
-NODE untitled_pipe_5276_0
-SQL >
-    %
-    SELECT * FROM events2 where cart_id ={{ String(cartId, '') }} ORDER BY created_at DESC limit 1
