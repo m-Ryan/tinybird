@@ -54,7 +54,9 @@ SCHEMA >
     `referring_domain` Nullable(String) `json:$.referring_domain`,
     `geoip_time_zone` Nullable(String) `json:$.geoip_time_zone`,
     `initial_geoip_time_zone` Nullable(String) `json:$.initial_geoip_time_zone`,
-    `product_items__item_brand` Array(Nullable(String)) `json:$.product_items[:].item_brand`
+    `timestamp` DateTime `json:$.timestamp`,
+    `created_at` DateTime `json:$.timestamp`,
 
 ENGINE "MergeTree"
-ENGINE_SORTING_KEY "uuid, visit_id, workspace_id"
+ENGINE_SORTING_KEY "created_at"
+
