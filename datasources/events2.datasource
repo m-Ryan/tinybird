@@ -55,7 +55,7 @@ SCHEMA >
     `geoip_time_zone` Nullable(String) `json:$.geoip_time_zone`,
     `initial_geoip_time_zone` Nullable(String) `json:$.initial_geoip_time_zone`,
     `timestamp` DateTime `json:$.timestamp`,
-    `created_at` DateTime `json:$.timestamp`,
+    `created_at` DateTime `json:$.timestamp`
 
 ENGINE "MergeTree"
 ENGINE_SORTING_KEY "created_at"
