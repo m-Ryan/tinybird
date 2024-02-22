@@ -1,4 +1,3 @@
-
 SCHEMA >
     `browser` String `json:$.browser`,
     `browser_version` String `json:$.browser_version`,
@@ -69,5 +68,6 @@ SCHEMA >
     `visit_id` String `json:$.visit_id`,
     `workspace_id` String `json:$.workspace_id`
 
-ENGINE "MergeTree"
-ENGINE_SORTING_KEY "created_at"
+ENGINE MergeTree
+ENGINE_PARTITION_KEY toYear(timestamp)
+ENGINE_SORTING_KEY created_at
